@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface ISupplierDAL
+    public interface ISupplierDAL : IDALGenerico<Supplier>
     {
-        bool AddSupplier(Supplier supplier);
-        bool UpdateSupplier(Supplier supplier);
-        bool DeleteSupplier(int id);
-        List<Supplier> GetSuppliers();
+        
 
     }
 }
