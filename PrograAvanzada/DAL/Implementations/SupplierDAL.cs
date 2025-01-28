@@ -11,10 +11,12 @@ namespace DAL.Implementations
     public class SupplierDAL : DALGenericoImpl<Supplier>, ISupplierDAL
     {
         private NorthwndContext _context;
-        public SupplierDAL(NorthwndContext context): base(context) {
+        public SupplierDAL(NorthwndContext context) : base(context)
         {
-            _context = context;
+            {
+                _context = context;
+            }
+
         }
-        
     }
 }

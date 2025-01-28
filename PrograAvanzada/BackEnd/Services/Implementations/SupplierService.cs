@@ -1,4 +1,5 @@
 ﻿using BackEnd.Services.Interfaces;
+using DAL.Implementations;
 using DAL.Interfaces;
 using Entities.Entities;
 
@@ -6,15 +7,16 @@ namespace BackEnd.Services.Implementations
 {
     public class SupplierService : ISupplierService
     {
-        private ISupplierDAL _supplierDAL;
+        IUnidadDeTrabajo _unidadDeTrabajo;
 
-        public SupplierService(ISupplierDAL supplierDAL)
+        public SupplierService(IUnidadDeTrabajo unidadDeTrabajo)
         {
-            _supplierDAL = supplierDAL;
+            _unidadDeTrabajo = unidadDeTrabajo;
         }
         public void AddSupplier(Supplier supplier)
         {
-            _supplierDAL.AddSupplier(supplier);
+            _unidadDeTrabajo.SupplierDAL.Add(supplier);
+            _unidadDeTrabajo.Complete();
         }
 
         public void DeleteSupplier(int id)
