@@ -1,4 +1,6 @@
+using BackEnd.Services.Implementations;
 using BackEnd.Services.Interfaces;
+using DAL.Implementations;
 using DAL.Interfaces;
 using Entities.Entities;
 
@@ -9,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 //inyeccion de dependencia
 #region DI 
 builder.Services.AddDbContext<NorthwndContext>();
-builder.Services.AddScoped<ISupplierService, ISupplierService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
 builder.Services.AddScoped<ISupplierDAL, SupplierDAL>();
 #endregion
 
